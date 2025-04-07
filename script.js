@@ -27,13 +27,14 @@ console.table(`Nearby ${value.distance} unexplored ${value.explored}}`);
 
 // Step 3.
 // Function to validate a planet object
-function validatePlanet(planet) {
+function validatePlanet(planet){
     // Loop through each property of the planet
-    for (let key in planet) {
+    for (let key in planetLog) {
       // Check if the value of the property is null or undefined
       if (planet[key] === null || planet[key] === undefined) {
-        console.error(`Error: ${key} has incomplete data!`);
+        console.error(`Error: ${planet.name} has an incomplete data!`)
+        return
       }
     }
   }
-  validatePlanet(planet);
+  validatePlanet('dam');
